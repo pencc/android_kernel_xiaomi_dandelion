@@ -167,8 +167,8 @@ static int ddp_mutex_set_l(int mutex_id, int *module_list,
 
 	if (mutex_id < DISP_MUTEX_DDP_FIRST ||
 		mutex_id > DISP_MUTEX_DDP_LAST) {
-		DDPERR("exceed mutex max (0 ~ %d)\n",
-			DISP_MUTEX_DDP_LAST);
+		DDPERR("%d exceed mutex max (0 ~ %d)\n",
+			mutex_id, DISP_MUTEX_DDP_LAST);
 		return -1;
 	}
 
@@ -334,7 +334,7 @@ int ddp_mutex_set_sof_wait(int mutex_id, struct cmdqRecStruct *handle,
 {
 	if (mutex_id < DISP_MUTEX_DDP_FIRST ||
 		mutex_id > DISP_MUTEX_DDP_LAST) {
-		DDPERR("exceed mutex max (0 ~ %d)\n", DISP_MUTEX_DDP_LAST);
+		DDPERR("%d exceed mutex max (0 ~ %d)\n", mutex_id, DISP_MUTEX_DDP_LAST);
 		return -1;
 	}
 
