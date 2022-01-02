@@ -827,12 +827,12 @@ static int bq2560x_set_ichg(struct charger_device *chg_dev, u32 curr)
 		ichg_bef = ichg_bef * REG02_ICHG_LSB + REG02_ICHG_BASE;
 		if ((ichg_bef <= curr / 1000) &&
 			(ichg_bef + REG02_ICHG_LSB > curr / 1000)) {
-			pr_info("[%s] current has set!\n", __func__, curr);
+			//pr_info("[%s] current has set!\n", __func__, curr);
 			return ret;
 		}
 	}
 
-	pr_info("[%s] curr=%d, ichg_bef = %d\n", __func__, curr, ichg_bef);
+	//pr_info("[%s] curr=%d, ichg_bef = %d\n", __func__, curr, ichg_bef);
 
 	return bq2560x_set_chargecurrent(bq, curr/1000);
 }
